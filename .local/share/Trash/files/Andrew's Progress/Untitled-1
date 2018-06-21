@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=:UTF-8">
+    <meta description="A beginners start">
+    <meta keywords="start, begin "
+    <title>Site Title</title>
+   </head>
+
+   <body>
+     <div>
+     <h1>I just started this<h1>
+     </div>
+      <p> 
+      	This is my paragraph I have to do for this assignment. This is the paragraph that I will insert my <a href="https://www.google.com" target_blank>link</a> into and accomplish my paragraph in.
+      </p>
+      <div>
+       This is my next sentence.  I will insert a line break
+      </div>
+     <div>
+         I am doing <span>more work</span> on this
+       </div>
+   <body>
+
+  </html>

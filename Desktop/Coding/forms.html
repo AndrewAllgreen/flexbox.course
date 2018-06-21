@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html> 
+   <head>
+    <meta charset="UTF-8">
+    <title>HTML Forms</title>
+    </head>
+
+    <body>
+        <h1>Santas Presents Order list</h1>
+  
+      <form action="contact_form.php" method="get" oninput="inovoice.value=parenInt(total.value)+parseInt(shipping.value)"
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Jon Snow, etc" required><br>
+
+        <label for="name">Email:</label>
+        <input type="text" name="email" value="jon@snow.com" required><br>
+
+        <label for="message">Message:</label><br>
+        <textarea name="message" rows="15" cols="100"></textarea><br>
+
+        <label for="options">Santas good list</label><br>
+        <input type="checkbox" name="options" value="John">John<br>
+        <input type="checkbox" name="options" value="Sally">Sally<br>
+        <input type="checkbox" name="options" value="Jack">Jack<br>
+        <input type="checkbox" name="options" value="Matt">Matt<br>
+        <input type="checkbox" name="options" value="Bob">Bob<br>
+        <input type="checkbox" name="options" value="Sue">Sue<br>
+        <input type="checkbox" name="options" value="Mary">Mary<br>
+
+        <label for="delivery">Present arrival:</label><br>
+        <input type="radio" name="delivery" value="in_store">By sleigh<br>
+        <input type="radio" name="delivery" value="shipping">Amazon<br>
+
+        <label for="age">What age are you?</label>
+        <select name="source">
+            <option value="0-5">0-5</option>
+            <option value="6-11">6-11</option>
+            <option value="12-17">12-17</option>
+            <option value="18-23">18-23</option>
+            <option value="24-29">24-29</option>
+            <option value="30-35">30-35</option>
+            <option value="36+">36+</option>
+        </select><br>
+        <label for="selection">What presents do you want?</label>
+        <select name="Choices" multiple="true">
+            <option value="Electronics">Electronics</option>
+            <option value="RCs">RCs</option>
+            <option value="Sports Equipment">Sports Equipment</option>
+            <option value="Interactive Toys">Interactive Toys</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Home Decor">Home Decor</option>
+            <option value="Vehicles">Vehicles</option>
+            <option value="Other">Other</option>
+        </select><br>
+        <label for="do_you_believe_in_santa?">Do you believe in Santa?:</label>
+         <select name="SantaBelief">
+             <optgroup label="Santas real">
+                 <option value="yes">YES</option>
+                 <option value="no">NO</option>
+                </optgroup>
+            </select>
+        <label for="total">Subtotal:</label><br>
+        <imput type="text" name="total" value="0"/><br>
+
+        <label for="shipping">Shipping</label><br>
+        <input type"text" name="shipping" value="9"/><br>
+
+        Total for invoice: <output name="invoice" for"total tax"></output><br>
+        <input type="submit" value="Send Contact Request">
+       
+      </form>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+#start {
+    padding: 40px;
+    background-color: red;
+    -webkit-animation: Fire 5s infinite;
+    animation: Fire 5s infinite;
+}
+@-webkit-keyframes 'Fire' {
+ 50%{
+     background-color: orange;
+ }
+}
+@-keyframes 'Fire' {
+    50%{
+        background-color: yellow;
+    }
+}
+.para {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+body {
+    background: url('../../File/download.jpg' )
+}

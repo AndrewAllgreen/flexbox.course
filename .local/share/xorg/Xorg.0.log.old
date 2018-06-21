@@ -1,0 +1,266 @@
+[     7.478] (--) Log file renamed from "/home/cts/.local/share/xorg/Xorg.pid-950.log" to "/home/cts/.local/share/xorg/Xorg.0.log"
+[     7.479] 
+X.Org X Server 1.19.6
+Release Date: 2017-12-20
+[     7.479] X Protocol Version 11, Revision 0
+[     7.479] Build Operating System: Linux 4.4.0-119-generic x86_64 Ubuntu
+[     7.479] Current Operating System: Linux cts-VirtualBox 4.15.0-23-generic #25-Ubuntu SMP Wed May 23 18:02:16 UTC 2018 x86_64
+[     7.479] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.15.0-23-generic root=UUID=9e270d29-03c2-41ac-a8fa-3cc15908a84e ro quiet splash
+[     7.479] Build Date: 13 April 2018  08:07:36PM
+[     7.479] xorg-server 2:1.19.6-1ubuntu4 (For technical support please see http://www.ubuntu.com/support) 
+[     7.479] Current version of pixman: 0.34.0
+[     7.479] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[     7.479] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[     7.479] (==) Log file: "/home/cts/.local/share/xorg/Xorg.0.log", Time: Thu Jun 21 08:16:37 2018
+[     7.480] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[     7.481] (==) No Layout section.  Using the first Screen section.
+[     7.481] (==) No screen section available. Using defaults.
+[     7.481] (**) |-->Screen "Default Screen Section" (0)
+[     7.481] (**) |   |-->Monitor "<default monitor>"
+[     7.482] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[     7.482] (==) Automatically adding devices
+[     7.482] (==) Automatically enabling devices
+[     7.482] (==) Automatically adding GPU devices
+[     7.482] (==) Automatically binding GPU devices
+[     7.482] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[     7.483] (WW) The directory "/usr/share/fonts/X11/cyrillic" does not exist.
+[     7.483] 	Entry deleted from font path.
+[     7.483] (WW) The directory "/usr/share/fonts/X11/100dpi/" does not exist.
+[     7.483] 	Entry deleted from font path.
+[     7.483] (WW) The directory "/usr/share/fonts/X11/75dpi/" does not exist.
+[     7.483] 	Entry deleted from font path.
+[     7.484] (WW) The directory "/usr/share/fonts/X11/100dpi" does not exist.
+[     7.484] 	Entry deleted from font path.
+[     7.484] (WW) The directory "/usr/share/fonts/X11/75dpi" does not exist.
+[     7.484] 	Entry deleted from font path.
+[     7.484] (==) FontPath set to:
+	/usr/share/fonts/X11/misc,
+	/usr/share/fonts/X11/Type1,
+	built-ins
+[     7.484] (==) ModulePath set to "/usr/lib/xorg/modules"
+[     7.484] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[     7.484] (II) Loader magic: 0x559c2344d020
+[     7.484] (II) Module ABI versions:
+[     7.484] 	X.Org ANSI C Emulation: 0.4
+[     7.484] 	X.Org Video Driver: 23.0
+[     7.484] 	X.Org XInput driver : 24.1
+[     7.484] 	X.Org Server Extension : 10.0
+[     7.485] (++) using VT number 1
+
+[     7.487] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[     7.487] (II) xfree86: Adding drm device (/dev/dri/card0)
+[     7.489] (II) systemd-logind: got fd for /dev/dri/card0 226:0 fd 12 paused 1
+[     7.489] (EE) Error systemd-logind returned paused fd for drm node
+[     7.489] (II) systemd-logind: releasing fd for 226:0
+[     7.491] (--) PCI:*(0:0:2:0) 80ee:beef:0000:0000 rev 0, Mem @ 0xe0000000/16777216, BIOS @ 0x????????/131072
+[     7.491] (II) LoadModule: "glx"
+[     7.493] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[     7.506] (II) Module glx: vendor="X.Org Foundation"
+[     7.506] 	compiled for 1.19.6, module version = 1.0.0
+[     7.506] 	ABI class: X.Org Server Extension, version 10.0
+[     7.506] (==) Matched vboxvideo as autoconfigured driver 0
+[     7.506] (==) Matched modesetting as autoconfigured driver 1
+[     7.506] (==) Matched fbdev as autoconfigured driver 2
+[     7.506] (==) Matched vesa as autoconfigured driver 3
+[     7.506] (==) Assigned the driver to the xf86ConfigLayout
+[     7.506] (II) LoadModule: "vboxvideo"
+[     7.507] (WW) Warning, couldn't open module vboxvideo
+[     7.507] (II) UnloadModule: "vboxvideo"
+[     7.507] (II) Unloading vboxvideo
+[     7.507] (EE) Failed to load module "vboxvideo" (module does not exist, 0)
+[     7.507] (II) LoadModule: "modesetting"
+[     7.507] (II) Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+[     7.509] (II) Module modesetting: vendor="X.Org Foundation"
+[     7.509] 	compiled for 1.19.6, module version = 1.19.6
+[     7.509] 	Module class: X.Org Video Driver
+[     7.509] 	ABI class: X.Org Video Driver, version 23.0
+[     7.509] (II) LoadModule: "fbdev"
+[     7.509] (II) Loading /usr/lib/xorg/modules/drivers/fbdev_drv.so
+[     7.510] (II) Module fbdev: vendor="X.Org Foundation"
+[     7.510] 	compiled for 1.19.3, module version = 0.4.4
+[     7.510] 	Module class: X.Org Video Driver
+[     7.510] 	ABI class: X.Org Video Driver, version 23.0
+[     7.510] (II) LoadModule: "vesa"
+[     7.510] (II) Loading /usr/lib/xorg/modules/drivers/vesa_drv.so
+[     7.511] (II) Module vesa: vendor="X.Org Foundation"
+[     7.511] 	compiled for 1.19.3, module version = 2.3.4
+[     7.512] 	Module class: X.Org Video Driver
+[     7.512] 	ABI class: X.Org Video Driver, version 23.0
+[     7.512] (==) Matched vboxvideo as autoconfigured driver 0
+[     7.512] (==) Matched modesetting as autoconfigured driver 1
+[     7.512] (==) Matched fbdev as autoconfigured driver 2
+[     7.512] (==) Matched vesa as autoconfigured driver 3
+[     7.512] (==) Assigned the driver to the xf86ConfigLayout
+[     7.512] (II) LoadModule: "vboxvideo"
+[     7.512] (WW) Warning, couldn't open module vboxvideo
+[     7.512] (II) UnloadModule: "vboxvideo"
+[     7.512] (II) Unloading vboxvideo
+[     7.512] (EE) Failed to load module "vboxvideo" (module does not exist, 0)
+[     7.512] (II) LoadModule: "modesetting"
+[     7.512] (II) Loading /usr/lib/xorg/modules/drivers/modesetting_drv.so
+[     7.512] (II) Module modesetting: vendor="X.Org Foundation"
+[     7.512] 	compiled for 1.19.6, module version = 1.19.6
+[     7.512] 	Module class: X.Org Video Driver
+[     7.512] 	ABI class: X.Org Video Driver, version 23.0
+[     7.512] (II) UnloadModule: "modesetting"
+[     7.512] (II) Unloading modesetting
+[     7.512] (II) Failed to load module "modesetting" (already loaded, 0)
+[     7.512] (II) LoadModule: "fbdev"
+[     7.512] (II) Loading /usr/lib/xorg/modules/drivers/fbdev_drv.so
+[     7.512] (II) Module fbdev: vendor="X.Org Foundation"
+[     7.512] 	compiled for 1.19.3, module version = 0.4.4
+[     7.512] 	Module class: X.Org Video Driver
+[     7.512] 	ABI class: X.Org Video Driver, version 23.0
+[     7.512] (II) UnloadModule: "fbdev"
+[     7.512] (II) Unloading fbdev
+[     7.512] (II) Failed to load module "fbdev" (already loaded, 0)
+[     7.512] (II) LoadModule: "vesa"
+[     7.512] (II) Loading /usr/lib/xorg/modules/drivers/vesa_drv.so
+[     7.512] (II) Module vesa: vendor="X.Org Foundation"
+[     7.512] 	compiled for 1.19.3, module version = 2.3.4
+[     7.512] 	Module class: X.Org Video Driver
+[     7.512] 	ABI class: X.Org Video Driver, version 23.0
+[     7.512] (II) UnloadModule: "vesa"
+[     7.512] (II) Unloading vesa
+[     7.512] (II) Failed to load module "vesa" (already loaded, 0)
+[     7.512] (II) modesetting: Driver for Modesetting Kernel Drivers: kms
+[     7.512] (II) FBDEV: driver for framebuffer: fbdev
+[     7.512] (II) VESA: driver for VESA chipsets: vesa
+[     7.513] xf86EnableIOPorts: failed to set IOPL for I/O (Operation not permitted)
+[     7.513] (WW) Falling back to old probe method for modesetting
+[     7.513] (II) modeset(1): using default device
+[     7.513] (II) Loading sub module "fbdevhw"
+[     7.513] (II) LoadModule: "fbdevhw"
+[     7.513] (II) Loading /usr/lib/xorg/modules/libfbdevhw.so
+[     7.514] (II) Module fbdevhw: vendor="X.Org Foundation"
+[     7.514] 	compiled for 1.19.6, module version = 0.0.2
+[     7.514] 	ABI class: X.Org Video Driver, version 23.0
+[     7.514] (EE) open /dev/fb0: Permission denied
+[     7.514] (WW) Falling back to old probe method for fbdev
+[     7.514] (II) Loading sub module "fbdevhw"
+[     7.514] (II) LoadModule: "fbdevhw"
+[     7.514] (II) Loading /usr/lib/xorg/modules/libfbdevhw.so
+[     7.514] (II) Module fbdevhw: vendor="X.Org Foundation"
+[     7.514] 	compiled for 1.19.6, module version = 0.0.2
+[     7.514] 	ABI class: X.Org Video Driver, version 23.0
+[     7.514] (EE) open /dev/fb0: Permission denied
+[     7.514] vesa: Ignoring device with a bound kernel driver
+[     7.514] (WW) Falling back to old probe method for vesa
+[     7.514] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[     7.514] (EE) Screen 0 deleted because of no matching config section.
+[     7.514] (II) UnloadModule: "modesetting"
+[     7.514] (EE) Screen 1 deleted because of no matching config section.
+[     7.514] (II) UnloadModule: "fbdev"
+[     7.514] (II) UnloadSubModule: "fbdevhw"
+[     7.514] (EE) Screen 1 deleted because of no matching config section.
+[     7.514] (II) UnloadModule: "vesa"
+[     7.514] (II) modeset(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[     7.514] (==) modeset(0): Depth 24, (==) framebuffer bpp 32
+[     7.514] (DB) xf86MergeOutputClassOptions unsupported bus type 0
+[     7.514] (==) modeset(0): RGB weight 888
+[     7.514] (==) modeset(0): Default visual is TrueColor
+[     7.514] (II) Loading sub module "glamoregl"
+[     7.514] (II) LoadModule: "glamoregl"
+[     7.514] (II) Loading /usr/lib/xorg/modules/libglamoregl.so
+[     7.525] (II) Module glamoregl: vendor="X.Org Foundation"
+[     7.525] 	compiled for 1.19.6, module version = 1.0.0
+[     7.525] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[     7.525] (II) glamor: OpenGL accelerated X.org driver based.
+[     7.962] (II) glamor: EGL version 1.4 (DRI2):
+[     7.962] EGL_MESA_drm_image required.
+[     7.963] (EE) modeset(0): glamor initialization failed
+[     7.963] (II) modeset(0): ShadowFB: preferred NO, enabled NO
+[     7.963] (II) modeset(0): Output VGA-1 has no monitor section
+[     7.964] (II) modeset(0): EDID for output VGA-1
+[     7.964] (II) modeset(0): Manufacturer: VBX  Model: 0  Serial#: 63308728
+[     7.964] (II) modeset(0): Year: 1990  Week: 1
+[     7.964] (II) modeset(0): EDID Version: 1.3
+[     7.964] (II) modeset(0): Digital Display Input
+[     7.964] (II) modeset(0): Indeterminate output size
+[     7.964] (II) modeset(0): Gamma: 2.20
+[     7.964] (II) modeset(0): DPMS capabilities: StandBy Suspend Off
+[     7.964] (II) modeset(0): Supported color encodings: RGB 4:4:4 YCrCb 4:4:4 
+[     7.964] (II) modeset(0): Default color space is primary color space
+[     7.964] (II) modeset(0): First detailed timing is preferred mode
+[     7.964] (II) modeset(0): redX: 0.640 redY: 0.330   greenX: 0.300 greenY: 0.600
+[     7.964] (II) modeset(0): blueX: 0.150 blueY: 0.060   whiteX: 0.312 whiteY: 0.329
+[     7.964] (II) modeset(0): Manufacturer's mask: 0
+[     7.964] (II) modeset(0): Supported detailed timing:
+[     7.964] (II) modeset(0): clock: 55.9 MHz   Image Size:  0 x 0 mm
+[     7.964] (II) modeset(0): h_active: 952  h_sync: 954  h_sync_end 956 h_blank_end 958 h_border: 0
+[     7.964] (II) modeset(0): v_active: 966  v_sync: 966  v_sync_end 1000 v_blanking: 972 v_border: 0
+[     7.964] (II) modeset(0): Ranges: V min: 0 V max: 200 Hz, H min: 0 H max: 200 kHz, PixClock max 1005 MHz
+[     7.964] (II) modeset(0): Monitor name: VBOX monitor
+[     7.964] (II) modeset(0): EDID (in hex):
+[     7.964] (II) modeset(0): 	00ffffffffffff0058580000b803c603
+[     7.964] (II) modeset(0): 	0100010380000078eeee91a3544c9926
+[     7.964] (II) modeset(0): 	0f505400000001010101010101010101
+[     7.964] (II) modeset(0): 	010101010101d315b80630c606300202
+[     7.964] (II) modeset(0): 	0202000000000000000000fd0000c800
+[     7.964] (II) modeset(0): 	c864000a202020202020000000fc0056
+[     7.964] (II) modeset(0): 	424f58206d6f6e69746f720a00000010
+[     7.964] (II) modeset(0): 	000a2020202020202020202020200007
+[     7.964] (II) modeset(0): Printing probed modes for output VGA-1
+[     7.964] (II) modeset(0): Modeline "952x966"x59.9   75.52  952 1008 1104 1256  966 969 979 1003 -hsync +vsync (60.1 kHz P)
+[     7.964] (II) modeset(0): Modeline "2560x1600"x60.0  348.50  2560 2752 3032 3504  1600 1603 1609 1658 -hsync +vsync (99.5 kHz e)
+[     7.964] (II) modeset(0): Modeline "2560x1600"x60.0  268.50  2560 2608 2640 2720  1600 1603 1609 1646 +hsync -vsync (98.7 kHz e)
+[     7.964] (II) modeset(0): Modeline "1920x1440"x60.0  234.00  1920 2048 2256 2600  1440 1441 1444 1500 -hsync +vsync (90.0 kHz e)
+[     7.964] (II) modeset(0): Modeline "1856x1392"x60.0  218.25  1856 1952 2176 2528  1392 1393 1396 1439 -hsync +vsync (86.3 kHz e)
+[     7.964] (II) modeset(0): Modeline "1792x1344"x60.0  204.75  1792 1920 2120 2448  1344 1345 1348 1394 -hsync +vsync (83.6 kHz e)
+[     7.964] (II) modeset(0): Modeline "2048x1152"x60.0  162.00  2048 2074 2154 2250  1152 1153 1156 1200 +hsync +vsync (72.0 kHz e)
+[     7.964] (II) modeset(0): Modeline "1920x1200"x59.9  193.25  1920 2056 2256 2592  1200 1203 1209 1245 -hsync +vsync (74.6 kHz e)
+[     7.964] (II) modeset(0): Modeline "1920x1200"x60.0  154.00  1920 1968 2000 2080  1200 1203 1209 1235 +hsync -vsync (74.0 kHz e)
+[     7.964] (II) modeset(0): Modeline "1920x1080"x60.0  148.50  1920 2008 2052 2200  1080 1084 1089 1125 -hsync -vsync (67.5 kHz e)
+[     7.964] (II) modeset(0): Modeline "1600x1200"x60.0  162.00  1600 1664 1856 2160  1200 1201 1204 1250 +hsync +vsync (75.0 kHz e)
+[     7.964] (II) modeset(0): Modeline "1680x1050"x60.0  146.25  1680 1784 1960 2240  1050 1053 1059 1089 -hsync +vsync (65.3 kHz e)
+[     7.964] (II) modeset(0): Modeline "1680x1050"x59.9  119.00  1680 1728 1760 1840  1050 1053 1059 1080 +hsync -vsync (64.7 kHz e)
+[     7.964] (II) modeset(0): Modeline "1400x1050"x60.0  121.75  1400 1488 1632 1864  1050 1053 1057 1089 -hsync +vsync (65.3 kHz e)
+[     7.964] (II) modeset(0): Modeline "1400x1050"x59.9  101.00  1400 1448 1480 1560  1050 1053 1057 1080 +hsync -vsync (64.7 kHz e)
+[     7.964] (II) modeset(0): Modeline "1600x900"x60.0  108.00  1600 1624 1704 1800  900 901 904 1000 +hsync +vsync (60.0 kHz e)
+[     7.964] (II) modeset(0): Modeline "1280x1024"x60.0  108.00  1280 1328 1440 1688  1024 1025 1028 1066 +hsync +vsync (64.0 kHz e)
+[     7.964] (II) modeset(0): Modeline "1440x900"x59.9  106.50  1440 1520 1672 1904  900 903 909 934 -hsync +vsync (55.9 kHz e)
+[     7.964] (II) modeset(0): Modeline "1440x900"x59.9   88.75  1440 1488 1520 1600  900 903 909 926 +hsync -vsync (55.5 kHz e)
+[     7.964] (II) modeset(0): Modeline "1280x960"x60.0  108.00  1280 1376 1488 1800  960 961 964 1000 +hsync +vsync (60.0 kHz e)
+[     7.964] (II) modeset(0): Modeline "1366x768"x59.8   85.50  1366 1436 1579 1792  768 771 774 798 +hsync +vsync (47.7 kHz e)
+[     7.964] (II) modeset(0): Modeline "1366x768"x60.0   72.00  1366 1380 1436 1500  768 769 772 800 +hsync +vsync (48.0 kHz e)
+[     7.966] (II) modeset(0): Modeline "1360x768"x60.0   85.50  1360 1424 1536 1792  768 771 777 795 +hsync +vsync (47.7 kHz e)
+[     7.966] (II) modeset(0): Modeline "1280x800"x59.8   83.50  1280 1352 1480 1680  800 803 809 831 -hsync +vsync (49.7 kHz e)
+[     7.966] (II) modeset(0): Modeline "1280x800"x59.9   71.00  1280 1328 1360 1440  800 803 809 823 +hsync -vsync (49.3 kHz e)
+[     7.966] (II) modeset(0): Modeline "1280x768"x59.9   79.50  1280 1344 1472 1664  768 771 778 798 -hsync +vsync (47.8 kHz e)
+[     7.966] (II) modeset(0): Modeline "1280x768"x60.0   68.25  1280 1328 1360 1440  768 771 778 790 +hsync -vsync (47.4 kHz e)
+[     7.966] (II) modeset(0): Modeline "1280x720"x60.0   74.25  1280 1390 1430 1650  720 725 730 750 +hsync +vsync (45.0 kHz e)
+[     7.966] (II) modeset(0): Modeline "1024x768"x60.0   65.00  1024 1048 1184 1344  768 771 777 806 -hsync -vsync (48.4 kHz e)
+[     7.966] (II) modeset(0): Modeline "800x600"x60.3   40.00  800 840 968 1056  600 601 605 628 +hsync +vsync (37.9 kHz e)
+[     7.966] (II) modeset(0): Modeline "800x600"x56.2   36.00  800 824 896 1024  600 601 603 625 +hsync +vsync (35.2 kHz e)
+[     7.966] (II) modeset(0): Modeline "848x480"x60.0   33.75  848 864 976 1088  480 486 494 517 +hsync +vsync (31.0 kHz e)
+[     7.966] (II) modeset(0): Modeline "640x480"x59.9   25.18  640 656 752 800  480 490 492 525 -hsync -vsync (31.5 kHz e)
+[     7.966] (II) modeset(0): Output VGA-1 connected
+[     7.966] (II) modeset(0): Using exact sizes for initial modes
+[     7.966] (II) modeset(0): Output VGA-1 using initial mode 952x966 +0+0
+[     7.966] (==) modeset(0): Using gamma correction (1.0, 1.0, 1.0)
+[     7.966] (==) modeset(0): DPI set to (96, 96)
+[     7.966] (II) Loading sub module "fb"
+[     7.966] (II) LoadModule: "fb"
+[     7.967] (II) Loading /usr/lib/xorg/modules/libfb.so
+[     7.969] (II) Module fb: vendor="X.Org Foundation"
+[     7.969] 	compiled for 1.19.6, module version = 1.0.0
+[     7.969] 	ABI class: X.Org ANSI C Emulation, version 0.4
+[     7.969] (==) Depth 24 pixmap format is 32 bpp
+[     7.969] (EE) modeset(0): drmSetMaster failed: Permission denied
+[     7.969] (EE) 
+Fatal server error:
+[     7.969] (EE) AddScreen/ScreenInit failed for driver 0
+[     7.969] (EE) 
+[     7.969] (EE) 
+Please consult the The X.Org Foundation support 
+	 at http://wiki.x.org
+ for help. 
+[     7.969] (EE) Please also check the log file at "/home/cts/.local/share/xorg/Xorg.0.log" for additional information.
+[     7.969] (EE) 
+[     7.974] (EE) Server terminated with error (1). Closing log file.

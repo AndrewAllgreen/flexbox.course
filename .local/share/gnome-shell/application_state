@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="org.gnome.Nautilus.desktop" open-window-count="1" score="96" last-seen="1529599416"/>
+    <application id="update-manager.desktop" open-window-count="0" score="0" last-seen="1529417664"/>
+    <application id="code.desktop" open-window-count="1" score="2823" last-seen="1529599393"/>
+    <application id="google-chrome.desktop" open-window-count="1" score="2430" last-seen="1529599192"/>
+    <application id="sublime_text.desktop" open-window-count="0" score="10610" last-seen="1528813885"/>
+    <application id="org.gnome.Terminal.desktop" open-window-count="0" score="11066" last-seen="1528737395"/>
+  </context>
+</application-state>

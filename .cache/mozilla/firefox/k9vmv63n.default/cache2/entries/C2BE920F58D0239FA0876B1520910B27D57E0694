@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>ContentKeeper Content Filtering</title>
+
+        <style>
+
+        body
+
+        {
+
+            font-family:calibri, arial;
+
+        }
+
+        div#header
+
+        {
+
+            background: url("/logo.png") no-repeat center;
+
+            height: 200px;
+
+        }
+
+        div#block_info
+
+        {
+
+            font-weight:bold;
+
+            font-size:24px;
+
+            text-align:center;
+
+            line-height:32px;
+
+            -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+
+            -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+
+        }
+
+        .block
+
+        {
+
+            background-color:#da9a48;
+			
+		    color: #fff;
+        }
+
+        .coach
+
+        {
+
+            background-color:#da9a48;
+
+            color: #fff;
+
+        }
+
+        .authenticate
+
+        {
+
+            background-color:#da9a48;
+
+            color: #fff;
+
+        }       
+
+        div#contact
+
+        {
+
+            font-weight:bold;
+
+            text-align:center;
+
+            font-size:16px;
+
+            line-height:32px;
+
+            -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+
+            -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+
+            box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+
+        }
+
+        div#contact.authenticate a
+
+        {
+
+            color:#fff;
+
+            text-decoration:none;
+
+        }
+
+        div#contact.coach a
+
+        {
+
+            color:#000;
+
+            text-decoration:none;
+
+        }       
+
+        div#contact.block a
+
+        {
+
+            color:#000;
+
+            text-decoration:none;
+
+        }               
+
+        div#policy, #notice, #rules
+
+        {
+
+            margin:20px;
+
+        }
+
+        #i_agree
+
+        {
+
+            margin-left: 20px;
+
+        }
+
+        #rules
+
+        {
+
+            width: 500px;
+
+            height: 50px;
+
+            overflow-y: scroll;
+
+            resize: none;
+
+            padding: 0;       
+
+        }
+
+        .policy
+
+        {
+
+            text-align:center;
+
+            font-weight:bold;
+
+        }
+
+        .notice, .rules
+
+        {
+
+            border: 2px #000000 solid;
+
+            padding: 5px;
+
+            width: 600px;
+
+            border-radius: 5px;
+
+            margin-bottom: 12px;
+
+            display: inline-block;
+
+        }
+
+        div#block_message
+
+        {
+
+            margin: 20px;
+
+        }
+
+        .url_info
+
+        {
+
+            font-weight:bold;
+
+        }       
+
+        .mainDiv
+
+        {
+
+            width:600px;
+
+            margin:0;
+
+            padding:0;
+
+            background-color:#FFFFFF;
+
+            margin-right:auto;
+
+            margin-left:auto;
+
+        }
+
+        </style>
+
+        <script>
+
+            function onAgree()
+
+            {
+
+                window.location.href = "http://" + URL;
+
+            }
+
+            function rulesRead()
+
+            {
+
+                if (this.scrollHeight - this.scrollTop === this.clientHeight)
+
+                {
+
+                    document.getElementById("i_agree").disabled = false;
+
+                }
+
+            }
+
+            function writeContent()
+
+            {
+
+                var BlockHeader = "RESTRICTED";
+
+                var CoachHeader = "THIS IS A WARNING NOT A BLOCK PAGE";
+
+                var AuthenticateHeader = "Authenticated by URL Filter Database";
+
+                var BlockMessage = "You have been restricted by the district's internet filter policy.<a href='change-hyperlink-color.php' style='color: #CC0000'></a><br /><br /><span class='url_info' style='color:#0066cc;'>URL: &nbsp;&nbsp;</span><span id='URL'></span><br /><span class='url_info' style='color:#0066cc;'>URL Categories: &nbsp;&nbsp;</span><span id='URL_Cat'></span><br /><span class='url_info' style='color:#0066cc;'>Policy: &nbsp;&nbsp;</span><span id='WHY'></span><br /><span class='url_info' style='color:#0066cc;'>User: &nbsp;&nbsp;</span><span id='USER'></span><br /><span class='url_info' style='color:#0066cc;'>User's IP: &nbsp;&nbsp;</span><span><b>160.7.84.100</b></span><br /><span class='url_info' style='color:#0066cc;'>Appliance: &nbsp;&nbsp;</span><span id='APPLIANCE'></span>";
+
+                var CoachMessage = "<span class='url_info' style='color:#000000;'>URL: &nbsp;&nbsp;</span><span id='URL'></span><br /><span class='url_info' style='color:#000000;'>URL Categories: &nbsp;&nbsp;</span><span id='URL_Cat'></span><br /><span class='url_info' style='color:#000000;'>Policy: &nbsp;&nbsp;</span><span id='WHY'></span><br /><span class='url_info' style='color:#000000;'>User: &nbsp;&nbsp;</span><span id='USER'></span><br /><span class='url_info' style='color:#000000;'>User's IP: &nbsp;&nbsp;</span><span><b>160.7.84.100</b></span><br /><span class='url_info' style='color:#0066cc;'>Appliance: &nbsp;&nbsp;</span><span id='APPLIANCE'></span>";
+
+                var CoachLink = "<br /><center><h3><a style='color: #000000' href='http://"+URL+"'>Click here to continue.</a></h3></center>";
+
+                var AuthenticateMessage = "Your requested URL requires authentication.<a href='change-hyperlink-color.php' style='color: #CC0000'></a><br /><br /><span class='url_info' style='color:blue;'>URL: &nbsp;&nbsp;</span><span id='URL'></span><br /><span class='url_info' style='color:blue;'>URL Categories: &nbsp;&nbsp;</span><span id='URL_Cat'></span><br /><span class='url_info' style='color:blue;'>User: &nbsp;&nbsp;</span><span id='USER'></span>";
+
+                var sPolicyBlock = "The site you have requested has been blocked because it does not comply with the filtering requirements as described by the <a href='http://www.fcc.gov/guides/childrens-internet-protection-act' style='color: #000000' target='_blank'>Children's Internet Protection Act (CIPA)</a>.";               
+
+                var sPolicyCoach = "The site you have requested has been warned because it MAY not comply with the filtering requirements as described by the <a href='http://www.fcc.gov/guides/childrens-internet-protection-act' style='color: #000000' target='_blank'>Children's Internet Protection Act (CIPA)</a>.";
+
+                var sPolicyAuthenticate = "The site you have requested has been blocked because it does not comply with the filtering requirements as described by the <a href='http://www.fcc.gov/guides/childrens-internet-protection-act' style='color: #000000' target='_blank'>Children's Internet Protection Act (CIPA)</a>.";
+
+                var sBlockInfoElement = document.getElementById("block_info");
+
+                var sBlockMsgElement = document.getElementById("block_message");
+
+                var sContactElement = document.getElementById("contact");
+
+                var sPolicyElement = document.getElementById("policy");
+
+                var sPolicyClassElement = document.getElementsByClassName("policy");
+
+               
+
+                if (MOD==2)
+
+                {
+
+                    sPolicyClassElement[0].style.color = "#F09609";
+
+                    sBlockInfoElement.innerHTML = BlockHeader;
+
+                    sBlockInfoElement.className = "block";
+
+                    sContactElement.className = "block";
+
+                    sBlockMsgElement.innerHTML = BlockMessage;
+
+                    if (sPolicyElement)
+
+                    {
+
+                        sPolicyElement.innerHTML += sPolicyBlock;
+
+                    }
+
+                }
+
+                else if(MOD==3)
+
+                {
+
+                    var sAcceptRulesElement = document.getElementById("accept_rules");
+
+                    sAcceptRulesElement.style.display = "block";
+
+                    sPolicyClassElement[0].style.color = "#000000";
+
+                    var oToBeRead = document.getElementById("rules");
+
+                    oToBeRead.onscroll = rulesRead;
+
+                    sBlockInfoElement.innerHTML = CoachHeader;
+
+                    sBlockInfoElement.className = "coach";
+
+                    sContactElement.className = "coach";
+
+                    sBlockMsgElement.innerHTML = CoachMessage;
+
+                    //sBlockMsgElement.innerHTML += CoachLink;
+
+                    if (sPolicyElement)
+
+                    {
+
+                        sPolicyElement.innerHTML += sPolicyCoach;
+
+                    }
+
+                }
+
+                else if (MOD==4)
+
+                {
+
+                    sPolicyClassElement[0].style.color = "blue";
+
+                    sBlockInfoElement.innerHTML = AuthenticateHeader;
+
+                    sBlockInfoElement.className = "authenticate";
+
+                    sContactElement.className = "authenticate";
+
+                    sBlockMsgElement.innerHTML = AuthenticateMessage;
+
+                    if (sPolicyElement)
+
+                    {
+
+                        sPolicyElement.innerHTML += sPolicyAuthenticate;
+
+                    }
+
+                }
+
+                else
+
+                {
+
+                    document.getElementById("block_info").innerHTML = BlockHeader;
+
+                    document.getElementById("block_message").innerHTML = BlockMessage ;
+
+                    if (sPolicyElement)
+
+                    {
+
+                        sPolicyElement.innerHTML += sPolicyBlock;
+
+                    }
+
+                }
+
+                document.getElementById("URL").innerHTML = URL;
+
+                document.getElementById("URL").style.fontWeight = "bold";
+
+                document.getElementById("URL_Cat").innerHTML = CAT;
+
+                document.getElementById("URL_Cat").style.fontWeight = "bold";
+
+                document.getElementById("WHY").innerHTML = WHY;
+
+                document.getElementById("WHY").style.fontWeight = "bold";
+
+                document.getElementById("USER").innerHTML = USER;
+
+                document.getElementById("USER").style.fontWeight = "bold";
+
+				//document.getElementById("IPA").innerHTML = IPA;
+
+               // document.getElementById("IPA").style.fontWeight = "bold";
+
+				document.getElementById("APPLIANCE").innerHTML = APPLIANCE;
+
+				document.getElementById("APPLIANCE").style.fontWeight = "bold";
+
+            }
+
+            function replace(string,text,by)
+
+            {
+
+                // Replaces text with by in string
+
+                var i = string.indexOf(text), newstr = '';
+
+                if ((!i) || (i == -1))
+
+                    return string;
+
+                newstr += string.substring(0,i) + by;
+
+                if (i+text.length < string.length)
+
+                    newstr += replace(string.substring(i+text.length,string.length),text,by);
+
+                return newstr;
+
+            }
+
+            function getParm(string,parm)
+
+            {
+
+                // returns value of parm from string
+
+                var startPos = string.indexOf(parm + "=");
+
+                if (startPos > -1)
+
+                {
+
+                    startPos = startPos + parm.length + 1;
+
+                    var endPos = string.indexOf("&",startPos);
+
+                    if (endPos == -1)
+
+                    {
+
+                        endPos = string.length;
+
+                    }
+
+                    var result = string.substring(startPos,endPos);
+
+                    return unescape(result);
+
+                }
+
+                return '';
+
+            }
+
+ 
+
+            var sURL = unescape(window.location.href);
+
+            var passed = location.search.substring(1);
+
+            var URL = getParm(passed,'URL'); URL = replace(URL,"+"," ");
+
+            var CAT = getParm(passed,'CAT'); CAT = replace(CAT,"+"," ");
+
+            var USER = getParm(passed,'ACC'); USER = replace(USER,"+"," ");
+
+            var WHY = getParm(passed,'WHY'); WHY = replace(WHY,"+"," ");
+
+            var IPA = getParm(passed,'IPA'); IPA = replace(IPA,"+"," ");
+
+            var MOD = getParm(passed,'MOD'); MOD = replace(MOD,"+"," ");
+
+            var RAW = getParm(passed,'RAW'); RAW = replace(RAW,"+"," ");	           
+
+
+
+            var APPLIANCE; 		
+
+            switch(IPA){
+
+		case "160.7.2.101":
+
+			APPLIANCE="CKF01";
+
+			break;
+
+                case "160.7.2.102":
+
+                        APPLIANCE="CKF02";
+
+                        break;
+
+                case "160.7.2.103":
+
+                        APPLIANCE="CKF03";
+
+                        break;
+
+                case "160.7.2.104":
+
+                        APPLIANCE="CKF04";
+
+                        break;
+
+                case "160.7.50.10":
+
+                        APPLIANCE="CKM01";
+
+                        break;
+
+                case "160.7.50.11":
+
+                        APPLIANCE="CKM02";
+
+                        break;
+
+                case "160.7.2.100":
+
+                        APPLIANCE="CKR01";
+
+                        break;
+
+		default:
+
+			APPLIANCE="ContentKeeper";
+
+	    }
+
+ 
+
+            var SPACER = " ";
+
+            var NEWLINE ="%0D%0A";
+
+            var USERNAME = "Username: ";
+
+            var SITE = "Site accessed: ";
+
+            var CATEGORY = "Category: ";
+
+            var POLICY = "Policy: ";
+
+            var IPADD = "Users IP Address: 160.7.84.100";
+
+            var MAIL = SITE+URL+NEWLINE+CATEGORY+CAT+NEWLINE+POLICY+WHY+NEWLINE+USERNAME+USER+NEWLINE+IPADD;
+
+        </script>
+
+  </head>
+
+    <body onLoad="writeContent();">
+
+        <div id="wrapper">
+
+            <div class="mainDiv">
+
+                <div id="header">       
+
+                </div>
+
+                <div id="block_info">
+
+                </div>
+
+                <div id="block_message">
+
+                </div>
+
+                    <center>
+
+                        <script src='https://auth.contentkeeper.com/rand.js' type='text/javascript'></script><script>document.write('<input type="Button" value="Login" onclick="login(RAW);"</>');</script>	</center>
+
+                <hr style="background-color:#0066cc;height:2px;border:none;" />
+
+                <div id="footer">
+
+                    <div id="policy">
+
+                        <div class="policy">Acceptable Use Policy</div>
+
+                    </div>
+
+                    <div id="accept_rules" style="display:none;">
+
+                        <div class="notice">
+
+                            <span id="notice">To proceed, please read and acknowledge the following:</span>
+
+                        </div>
+
+                        <div class="rules">
+
+                            <textarea readonly id="rules">This is a warning page, NOT A BLOCK PAGE.  If you are aware of the site content or have reviewed the site in the past, click "Continue."  This is just a warning to Teachers and Staff that this site may contain objectionable material.  Please click "Continue" to proceed.</textarea>
+
+                            <input type="button" onClick="onAgree();" id="i_agree" value="Continue" disabled>
+
+                        </div>
+
+                    </div>
+
+                    <div id="contact">
+
+                        &nbsp; <!-- To submit this blocked site for review, -->
+
+                        <script>
+
+                            // document.write('<td bgcolor="#E00000" class="font"><a href="mailto:changeme@example.com?subject=URL Review&body=' + MAIL + '">click here to email support.</a></td>');
+
+                        </script>
+
+                    </div>
+
+                    <br /><br /><br /><br /><br /><br />
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
+
+1œùwL           [uƒ?¥Á      H    :https://ckf03.nebo.edu/cgi-bin/blockpage/nebo.cgi?URL=2542116.fls.doubleclick.net&CAT=Nebo-Block-All+%28Custom%29&CATNO=103&ACC=gerald.talbot%2Fnebo&WHY=Policy%3D019tech%3B+NT+Group%3D019tech&MOD=2&IPA=160.7.2.103&RAW=https%3A%2F%2F2542116.fls.doubleclick.net%3A443%3Fck_sni%3D2785794476.443&AUTH0=%7BCK_USERID%7D%2CNebo-Block-All+%28Custom%29&PGE=https%3A%2F%2Fckf03.nebo.edu%2Fcgi-bin%2Fblockpage%2Fnebo.cgi&STR=null%2Cnull%2Cnull%2Cnull%2Cnull&SRV=null&AUTH1=%7BCK_USERID%7D%2Chttps%3A%2F%2F2542116.fls.doubleclick.net%3A443%3Fck_sni%3D2785794476.443%2CNebo-Block-All+%28Custom%29 strongly-framed 1 security-info FnhllAKWRHGAlo+ESXykKAAAAAAAAAAAwAAAAAAAAEaphjojH6pBabDSgSnsfLHeAAQAAgAAAAAAAAAAAAAAAAAAAAAB4vFIJp5wRkeyPxAQ9RJGKPqbqVvKO0mKuIl8ec8o/uhmCjImkVxP+7sgiYWmMt8FvcOXmlQiTNWFiWlrbpbqgwAAAAAAAAUfMIIFGzCCBAOgAwIBAgIQChaAPmuxby8Q2CML2MeLzDANBgkqhkiG9w0BAQsFADBNMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMScwJQYDVQQDEx5EaWdpQ2VydCBTSEEyIFNlY3VyZSBTZXJ2ZXIgQ0EwHhcNMTcxMDEyMDAwMDAwWhcNMjAxMTA0MTIwMDAwWjBnMQswCQYDVQQGEwJVUzENMAsGA1UECBMEVXRhaDEVMBMGA1UEBxMMU3BhbmlzaCBGb3JrMR0wGwYDVQQKExROZWJvIFNjaG9vbCBEaXN0cmljdDETMBEGA1UEAwwKKi5uZWJvLmVkdTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK2LW5i+TZ0CKEhZgqUUmnmLJcPgj6Fq8V5v5/ggyBDXPuzioX8zkpB2E5476MtSCDEzwIrSodNvOZhAFk2RTtetux/ogJNYVov0xRtSt/KdQkolVdf+CDdDQjCktKyMyHCN5GEbxzpLoOWYEJBSDl5Zc1N41aUOmOQf9kJY2uxBlCXcs8FI/uxfRsxdnGNH1eUe1yWpY/vl6s/TnjmOGhodR59xtBEUJSrR2DdbaBxuUgBD/zjaDKwgpz+ddpWITug1yr2KXeG3YvTXBJPi8IUMhQdstyn/Uau2M74vCaPF8gPjWGd8PUWQfAGVjFbP7TIZmrmEBSv5H48YfJOPVQ8CAwEAAaOCAdswggHXMB8GA1UdIwQYMBaAFA+AYRyCMWHVLyjnjUY4tCzhxtniMB0GA1UdDgQWBBTQNcaRtQ1PyRNXGRXU75sOkFGfwjAfBgNVHREEGDAWggoqLm5lYm8uZWR1gghuZWJvLmVkdTAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMGsGA1UdHwRkMGIwL6AtoCuGKWh0dHA6Ly9jcmwzLmRpZ2ljZXJ0LmNvbS9zc2NhLXNoYTItZzEuY3JsMC+gLaArhilodHRwOi8vY3JsNC5kaWdpY2VydC5jb20vc3NjYS1zaGEyLWcxLmNybDBMBgNVHSAERTBDMDcGCWCGSAGG/WwBATAqMCgGCCsGAQUFBwIBFhxodHRwczovL3d3dy5kaWdpY2VydC5jb20vQ1BTMAgGBmeBDAECAjB8BggrBgEFBQcBAQRwMG4wJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBGBggrBgEFBQcwAoY6aHR0cDovL2NhY2VydHMuZGlnaWNlcnQuY29tL0RpZ2lDZXJ0U0hBMlNlY3VyZVNlcnZlckNBLmNydDAMBgNVHRMBAf8EAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQAp0Mjt6FYxrNPge+ix2x7nv/Wd+knj5gXUPhDhCvK/nuWiwRswyQ2FC79AqM0AyM94xhgj+zaEh50izHa98jZyw/dv0gjBA371oFIZJd05S8skF9M9vFj36EWCYgV1UTHKFrCYElGclMvjrqm2CZVL+tjSMFTVaAkLFbzWy139K4OGyPg4OsO/swqJETwfgffjw8Eas5lvXU+3s5xZKhgVu3TD5wL/kpUbJwgXgRwoCiy43iGOZO/SPqaRzNPaLwizplop4ti9foqTbULpRxLUD9KRlFYumeC0wefn9ER7Fm8gXTboE1DU9VZF0p6dMZmW0PwVXL2EaItNh6fy58WwAC8DAwAAAAABAQAAAAAAAARub25lAAAABG5vbmUAAAA= request-method GET response-head HTTP/1.1 200 OK
+Date: Tue, 22 May 2018 19:54:26 GMT
+Server: Apache/2.2.15 (Scientific Linux)
+Content-Type: text/html; charset=UTF-8
+ original-response-headers Date: Tue, 22 May 2018 19:54:26 GMT
+Server: Apache/2.2.15 (Scientific Linux)
+Connection: close
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+ uncompressed-len 0 predictor::resource-count 1 predictor::https://auth.contentkeeper.com/rand.js 1,1,0,4096   <‡
